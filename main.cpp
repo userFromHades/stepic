@@ -6,8 +6,8 @@ int main (int, char**){
     //mkfifo ("home/box/out.fifo",0666);
     //mkfifo ("home/box/in.fifo",0666);
 
-    auto in = open("in.fifo",O_RDONLY|O_NONBLOCK);
-    auto out= open("out.fifo",O_WRONLY);
+    auto in = open("home/box/in.fifo",O_RDONLY|O_NONBLOCK);
+    auto out= open("home/box/out.fifo",O_WRONLY);
 
     printf ("start %i %i\n", in, out);
 
