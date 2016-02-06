@@ -38,4 +38,5 @@ int main (int, char**){
         printf("-->%s\n", buf);
         close(sockets[0]);
     }
+    sleep(1);
 }
