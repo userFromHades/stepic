@@ -63,11 +63,11 @@ void exec_command (const std::string &command){
 }
 
 void exec_last_command (const std::string &command){
-    //close (STDOUT_FILENO);
-    //auto f = open (OUT_PATH, O_CREAT|O_WRONLY, 0666);
-    //dup2(f,STDOUT_FILENO);
+    close (STDOUT_FILENO);
+    auto f = open (OUT_PATH, O_CREAT|O_WRONLY, 0666);
+    dup2(f,STDOUT_FILENO);
     exec_command(command);
-    //close(STDOUT_FILENO);
+    close(STDOUT_FILENO);
 }
 
 void go2 (const std::vector<std::string> &comands, const int deep){
@@ -118,5 +118,6 @@ int main (int, char**){
     else if (commands.size())
         exec_last_command(commands[0]);
 
+    sleep(1);
     return 0;
 }
