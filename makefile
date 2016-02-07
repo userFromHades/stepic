@@ -1,12 +1,4 @@
-.PHONY: all run clean rebuild
+.PHONY: run clean rebuild
 
 all:
-	g++ -std=c++11 -o test main_1.cpp
-
-clean:
-	rm test
-
-run:
-	sleep 2
-	./test
-	ps -ela| grep test
+	g++ -std=c++11 -DBATLE -o /home/box/shell /home/box/main_1.cpp
